@@ -1,0 +1,14 @@
+﻿<Window x:Class="Tekst.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tekst"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock x:Name="display" VerticalAlignment="Top"/>
+        <TextBox x:Name="text" Margin="10"  VerticalAlignment="Center" TextChanged="text_TextChanged"/>
+        <Button x:Name="clear" VerticalAlignment="Center" Width="400" Content="Czyść" Click="clear_Click"/>
+    </StackPanel>
+</Window>
