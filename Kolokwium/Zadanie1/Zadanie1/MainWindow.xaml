@@ -1,0 +1,55 @@
+﻿<Window x:Class="Zadanie1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadanie1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="styl">
+            <Setter Property="Control.Background" Value="Blue"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+        </Style>
+        <Storyboard x:Key="obrót">
+            <DoubleAnimation Storyboard.TargetProperty="Angle" BeginTime="0:0:0" Duration="0:0:15" From="0" To="360" RepeatBehavior="Forever"
+                             Storyboard.TargetName="przycisk"/>
+        </Storyboard>
+    </Window.Resources>
+  
+ 
+  
+
+    <StackPanel Orientation="Vertical">
+        <Button Content="Nie " Width="400" Height="30" Margin="10" Style="{StaticResource styl}" Click="Button_Click">
+            <Button.RenderTransform>
+                <ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Nie " Width="400" Height="30" Margin="10" Style="{StaticResource styl}"  Click="Button_Click">
+            <Button.RenderTransform>
+                <SkewTransform AngleX="-10"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Nie " Width="400" Height="30" Margin="10" Style="{StaticResource styl}" Click="Button_Click">
+            <Button.RenderTransform>
+                <RotateTransform x:Name="przycisk" Angle="0"/>
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Loaded">
+                    <BeginStoryboard Storyboard="{StaticResource obrót}"/>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Content="Nie " Width="400" Height="30" Margin="10" Style="{StaticResource styl}" Click="Button_Click">
+            <Button.RenderTransform>
+                <TranslateTransform X="40" Y="20"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Nie " Width="400" Height="30" Margin="10" Style="{StaticResource styl}" Click="Button_Click">
+            <Button.RenderTransform>
+                <RotateTransform Angle="11.5"/>
+            </Button.RenderTransform>
+        </Button>
+    </StackPanel>
+</Window>
